@@ -1,7 +1,3 @@
-const path = require('path')
-// 拼接路径
-const resolve = dir => path.join(__dirname, dir)
-
 module.exports = {
   publicPath: '/',
   lintOnSave: true,
@@ -12,6 +8,13 @@ module.exports = {
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''
+        }
+      },
+      '/csdn': {
+        target: 'https://blog.csdn.net',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/csdn': ''
         }
       }
     }
@@ -26,21 +29,6 @@ module.exports = {
       .test(/\.md$/)
       .use('text-loader')
       .loader('text-loader')
-      .end()
-    config.resolve.extensions
-      .add('.ts')
-      .add('.json')
-      .add('.scss')
-      .add('.vue')
-      .end()
-    // 重新设置 alias
-    config.resolve.alias
-      .set('@', resolve('src'))
-      .end()
-    config.devServer
-      .set('overlay', true)
-      .set('hot', true)
-      .set('open', true)
       .end()
   }
 }

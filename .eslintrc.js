@@ -17,6 +17,7 @@ module.exports = {
     'no-useless-return': 0,
     'no-multiple-empty-lines': [1, { "max": 3 }],
     'no-undef': 2,
+    'space-before-function-paren': 0,
     'no-return-assign': 0,
     'brace-style': [1, 'stroustrup'],
     'array-bracket-newline': 0,
