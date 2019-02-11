@@ -2,8 +2,8 @@
   <div id="app">
     <Header></Header>
     <div id="nav">
-      <router-link to="/">推荐</router-link>
-      <router-link to="/hot">排行榜</router-link>
+      <router-link to="/recom">推荐</router-link>
+      <router-link to="/toplist">排行榜</router-link>
       <router-link to="/search">搜索</router-link>
     </div>
     <router-view/>
@@ -31,6 +31,7 @@ export default class App extends Vue {}
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #F4F4F4;
     text-align: center;
     color: $textColor;
   }
@@ -38,6 +39,7 @@ export default class App extends Vue {}
     display: flex;
     height: 40px;
     align-items: center;
+    background-color: #fff;
     /*justify-content: space-around;*/
     border-bottom: 1px solid rgba(3,3,3,.1);
     >a {
