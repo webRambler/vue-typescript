@@ -2,8 +2,8 @@
   <div id="app">
     <Header></Header>
     <div id="nav">
-      <router-link to="/">推荐音乐</router-link>
-      <router-link to="/hot">热歌榜</router-link>
+      <router-link to="/">推荐</router-link>
+      <router-link to="/hot">排行榜</router-link>
       <router-link to="/search">搜索</router-link>
     </div>
     <router-view/>
@@ -38,10 +38,12 @@ export default class App extends Vue {}
     display: flex;
     height: 40px;
     align-items: center;
-    justify-content: space-around;
+    /*justify-content: space-around;*/
     border-bottom: 1px solid rgba(3,3,3,.1);
     >a {
       color: $textColor;
+      flex: 1;
+      font-size: 16px;
       &.router-link-exact-active {
         color: $mainColor;
         position: relative;
