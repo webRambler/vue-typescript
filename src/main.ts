@@ -6,7 +6,10 @@ import router from '@/router/router'
 import store from '@/store/store'
 import './registerServiceWorker'
 import http from './utils/http'
+import FastClick from 'fastclick' // 引入插件
 
+// 使用 fastclick
+FastClick.attach(document.body)
 
 Vue.use(ElementUI)
 

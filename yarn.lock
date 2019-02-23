@@ -726,6 +726,11 @@
   dependencies:
     any-observable "^0.3.0"
 
+"@types/fastclick@^1.0.28":
+  version "1.0.28"
+  resolved "http://registry.npm.taobao.org/@types/fastclick/download/@types/fastclick-1.0.28.tgz#db4b3f6f079235324b264338e229f9cdd98a6c4e"
+  integrity sha1-20s/bweSNTJLJkM44in5zdmKbE4=
+
 "@types/q@^1.5.1":
   version "1.5.1"
   resolved "http://registry.npm.taobao.org/@types/q/download/@types/q-1.5.1.tgz#48fd98c1561fe718b61733daed46ff115b496e18"
@@ -3706,6 +3711,11 @@ fast-levenshtein@~2.0.4:
   version "2.0.6"
   resolved "http://registry.npm.taobao.org/fast-levenshtein/download/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
+
+fastclick@^1.0.6:
+  version "1.0.6"
+  resolved "http://registry.npm.taobao.org/fastclick/download/fastclick-1.0.6.tgz#161625b27b1a5806405936bda9a2c1926d06be6a"
+  integrity sha1-FhYlsnsaWAZAWTa9qaLBkm0Gvmo=
 
 fastparse@^1.1.1:
   version "1.1.2"
