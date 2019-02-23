@@ -4,6 +4,7 @@
     <div class="radio-content">
       <div v-for="item in radioList" :key="item.radioid">
         <img :src="item.picUrl" alt="">
+        <i class="iconfont  icon-bofang"></i>
         <div v-text="item.Ftitle"></div>
       </div>
     </div>
@@ -25,6 +26,8 @@ export default class Radio extends Vue {
     &-title {
       text-align: left;
       color: #000;
+      margin: 5px 0 10px;
+      font-size: 16px;
       font-weight: 500;
     }
     &-content {
@@ -33,9 +36,17 @@ export default class Radio extends Vue {
       justify-content: space-between;
       > div {
         width: 49%;
+        position: relative;
         background-color: #fff;
         > img {
           width: 100%;
+        }
+        > i {
+          position: absolute;
+          bottom: 43px;
+          color: aliceblue;
+          font-size: 20px;
+          right: 3px;
         }
         > div {
           height: 40px;
