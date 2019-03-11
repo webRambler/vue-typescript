@@ -9,6 +9,7 @@
     </div>
     <div class="music-list-right">
       <h2 v-text="obj1.topTitle"></h2>
+      <i class="iconfont icon-iconfont-right"></i>
       <ul>
         <li class="txt" v-for="(item, i) in obj1.songList" :key="i">
           {{ i+1 }}
@@ -63,6 +64,7 @@ export default class MusicList extends Vue {
     }
   }
   &-right {
+    position: relative;
     box-sizing: border-box;
     /*float: left;*/
     width: 2.55rem;
@@ -74,6 +76,12 @@ export default class MusicList extends Vue {
       color: #000;
       font-weight: 400;
       margin-bottom: .05rem;
+    }
+    > i {
+      position: absolute;
+      right: .03rem;
+      font-size: .16rem;
+      top: 40%;
     }
     .txt {
       overflow: hidden;
