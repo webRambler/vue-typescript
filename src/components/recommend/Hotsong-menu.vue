@@ -32,8 +32,8 @@ export default class Radio extends Vue {
 
 <style scoped lang="scss">
   .hot-menu {
-    margin-top: 20px;
-    padding: 10px;
+    margin-top: .20rem;
+    padding: .1rem;
     > h2 {
       text-align: left;
       color: #000;
@@ -48,23 +48,23 @@ export default class Radio extends Vue {
         text-align: left;
         position: relative;
         background-color: #fff;
-        margin-top: 10px;
+        margin-top: .1rem;
         .ali-icon {
           position: absolute;
           &.span{
-            left: 6px;
+            left: .06rem;
             color: #fff;
-            font-size: 12px;
-            bottom: 45px;
+            font-size: .12rem;
+            bottom: .45rem;
             i {
               color: #fff;
-              font-size: 12px;
+              font-size: .12rem;
             }
           }
           &.iconfont {
-            right: 3px;
-            bottom: 45px;
-            font-size: 20px;
+            right: .03rem;
+            bottom: .45rem;
+            font-size: .2rem;
             color: #fff;
           }
         }
@@ -72,12 +72,12 @@ export default class Radio extends Vue {
           width: 100%;
         }
         .txt {
-          padding-left: 8px;
+          padding-left: .08rem;
           p {
             color: #000;
-            font-size: 12px;
+            font-size: .12rem;
             &:first-child {
-              font-size: 14px;
+              font-size: .14rem;
               text-overflow: ellipsis;
               white-space: nowrap;
               overflow: hidden;

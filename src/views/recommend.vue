@@ -6,9 +6,9 @@
     <div class="footer">
       <p style="color: rgba(0,0,0,.6);">去客户端发现更多好音乐 ></p>
       <p style="color: #000">查看电脑版网页</p>
-      <div style="margin: 10px">
-        <i style="font-size: 23px;" class="iconfont  icon-QQyinle"></i>
-        <span style="font-size: 18px">QQ音乐</span>
+      <div style="margin: .10rem">
+        <i style="font-size: .23rem;" class="iconfont  icon-QQyinle"></i>
+        <span style="font-size: .18rem">QQ音乐</span>
       </div>
       <p class="copyright">Copyright © 1998 - <span id="js_cpright_year">2019</span> Tencent. All Rights Reserved.</p>
       <p class="link">联系电话：0755-86013388 QQ群：55209235</p>
@@ -53,9 +53,9 @@ export default class Home extends Vue {
 
 <style lang="scss" scoped>
   .footer {
-    font-size: 14px;
+    font-size: .14rem;
     .link,.copyright {
-      font-size: 10px;
+      font-size: .10rem;
     }
   }
 </style>

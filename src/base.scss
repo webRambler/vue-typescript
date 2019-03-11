@@ -1,16 +1,17 @@
 $mainColor: #31c27c;
 $textColor: rgba(0,0,0,.6);
+html{ font-size: 100px }
 html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
 fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }   /*去掉input等聚焦时的蓝色边框*/
 ul, ol { list-style:none; }
 input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
 select, input { vertical-align:middle;}
-select, input, textarea { font-size:12px; margin:0; }
+select, input, textarea { font-size:.12rem; margin:0; }
 textarea { resize:none; } /*防止拖动*/
 img {border:0; vertical-align:middle; }  /*  去掉图片低测默认的3像素空白缝隙，或者用display：block也可以*/
 table { border-collapse:collapse; }
 body {
-    font:15px/150% Arial,Verdana,"\5b8b\4f53";
+    font:.15rem/150% Arial,Verdana,"\5b8b\4f53";
     color:#333;
     background:#fff
 }
@@ -43,7 +44,7 @@ s,i,em{font-style:normal;text-decoration:none;}
 .hide {
     display:none
 }
-.font12{ font-size: 12px }
-.font14{ font-size: 14px }
-.font15{ font-size: 15px }
-.font16{ font-size: 16px }
+.font12{ font-size: .12rem }
+.font14{ font-size: .14rem }
+.font15{ font-size: .15rem }
+.font16{ font-size: .16rem }

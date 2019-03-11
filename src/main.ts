@@ -11,6 +11,8 @@ import FastClick from 'fastclick' // 引入插件
 // 使用 fastclick
 FastClick.attach(document.body)
 
+if (document && document.documentElement) document.documentElement.style.fontSize = document.documentElement.clientWidth / 375*100 + 'px'
+
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false

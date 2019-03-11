@@ -24,7 +24,7 @@ export default class Header extends Vue {
   .header {
     color: #fff;
     box-sizing: border-box;
-    padding: 9px 13px 5px;
+    padding: .09rem .13rem .05rem;
     background-color: $mainColor;
     position: fixed;
     z-index: 999;
@@ -32,13 +32,13 @@ export default class Header extends Vue {
     width: 100%;
     ul {
       display: flex;
-      height: 30px;
+      height: .3rem;
       justify-content: space-between;
 
       li:first-child {
         display: flex;
-        height: 25px;
-        line-height: 25px;
+        height: .25rem;
+        line-height: .25rem;
 
         img {
           height: 100%;
@@ -46,12 +46,12 @@ export default class Header extends Vue {
       }
 
       li:last-child {
-        height: 26px;
-        width: 80px;
-        line-height: 26px;
+        height: .26rem;
+        width: .8rem;
+        line-height: .26rem;
         background-color: #149c5a;
-        border-radius: 13px;
-        border: 1px solid rgba(255, 240, 240, 0.4);
+        border-radius: .13rem;
+        border: .01rem solid rgba(255, 240, 240, 0.4);
       }
     }
   }

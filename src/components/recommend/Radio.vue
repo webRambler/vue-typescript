@@ -22,13 +22,13 @@ export default class Radio extends Vue {
 
 <style scoped lang="scss">
   .radio {
-    padding: 10px;
+    padding: .1rem;
     color: #000;
     &-title {
       text-align: left;
       color: #000;
-      margin: 5px 0 10px;
-      font-size: 16px;
+      margin: .05rem 0 .1rem;
+      font-size: .16rem;
       font-weight: 500;
     }
     &-content {
@@ -44,15 +44,15 @@ export default class Radio extends Vue {
         }
         > i {
           position: absolute;
-          bottom: 43px;
+          bottom: .43rem;
           color: aliceblue;
-          font-size: 20px;
-          right: 3px;
+          font-size: .2rem;
+          right: .03rem;
         }
         > div {
-          height: 40px;
-          padding-left: 5px;
-          line-height: 40px;
+          height: .4rem;
+          padding-left: .05rem;
+          line-height: .4rem;
           text-align: left;
         }
       }

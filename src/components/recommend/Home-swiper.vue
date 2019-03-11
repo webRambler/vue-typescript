@@ -39,12 +39,12 @@ export default class HomeSwiper extends Vue {
 <style scoped lang="scss">
   .swiper-pagination {
     /deep/ span {
-      width: 6px;
-      height: 6px;
+      width: .06rem;
+      height: .06rem;
       &.swiper-pagination-bullet-active {
         background-color: #fff;
-        width: 8px;
-        height: 8px;
+        width: .08rem;
+        height: .08rem;
       }
     }
   }

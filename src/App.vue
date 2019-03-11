@@ -39,26 +39,26 @@ export default class App extends Vue {}
   }
   #nav {
     display: flex;
-    margin-top: 44px;
-    height: 40px;
+    margin-top: .44rem;
+    height: .4rem;
     align-items: center;
     background-color: #fff;
     /*justify-content: space-around;*/
-    border-bottom: 1px solid rgba(3,3,3,.1);
+    border-bottom: .01rem solid rgba(3,3,3,.1);
     >a {
       color: $textColor;
       flex: 1;
-      font-size: 16px;
+      font-size: .16rem;
       &.router-link-exact-active {
         color: $mainColor;
         position: relative;
         &::after {
           content: '';
           position: absolute;
-          bottom: -10px;
+          bottom: -0.1rem;
           left: 0;
           width: 100%;
-          height: 2px;
+          height: .02rem;
           background-color: $mainColor;
         }
       }
