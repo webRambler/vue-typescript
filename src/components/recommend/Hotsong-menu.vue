@@ -36,6 +36,7 @@ export default class Radio extends Vue {
     padding: 10px;
     > h2 {
       text-align: left;
+      color: #000;
     }
     ul {
       display: flex;

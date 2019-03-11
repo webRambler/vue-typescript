@@ -35,6 +35,12 @@ export default class Home extends Vue {
   radioList = []
   songList = []
   created() {
+    this.getRecommendList()
+  }
+  mounted() {
+    console.log(this, 777)
+  }
+  getRecommendList() {
     this.$http.get('/api/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg?g_tk=714553375&uin=894633585&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1&_=1549907341318').then(res => {
       console.log(res.data, 987)
       this.swipeList = res && res.data && res.data.slider

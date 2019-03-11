@@ -23,9 +23,13 @@ export default class Header extends Vue {
   $mainColor: #31c27c;
   .header {
     color: #fff;
+    box-sizing: border-box;
     padding: 9px 13px 5px;
     background-color: $mainColor;
-
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    width: 100%;
     ul {
       display: flex;
       height: 30px;

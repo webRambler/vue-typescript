@@ -23,6 +23,7 @@ export default class Radio extends Vue {
 <style scoped lang="scss">
   .radio {
     padding: 10px;
+    color: #000;
     &-title {
       text-align: left;
       color: #000;

@@ -39,6 +39,7 @@ export default class App extends Vue {}
   }
   #nav {
     display: flex;
+    margin-top: 44px;
     height: 40px;
     align-items: center;
     background-color: #fff;
