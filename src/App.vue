@@ -49,6 +49,8 @@ export default class App extends Vue {}
       color: $textColor;
       flex: 1;
       font-size: .16rem;
+      /*在移动端点击时，背景会高亮，设置此属性可以隐藏背景高亮*/
+      -webkit-tap-highlight-color: transparent;
       &.router-link-exact-active {
         color: $mainColor;
         position: relative;
