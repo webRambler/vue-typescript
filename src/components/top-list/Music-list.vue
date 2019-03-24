@@ -44,9 +44,9 @@ export default class MusicList extends Vue {
   &-left {
     /*float: left;*/
     position: relative;
-    /*width: 1rem;*/
+    width: 1rem;
     height: 1rem;
-    flex: 100;
+    /*flex: 100;*/
     > img {
       width: 100%;
       height: 100%;
