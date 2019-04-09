@@ -1,12 +1,13 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
 import Home from '@/views/recommend.vue'
 import Search from '@/views/Search.vue'
 import Toplist from '@/views/Toplist.vue'
+import NotFound from '@/views/NotFound.vue'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
+const router = new VueRouter({
   routes: [
     {
       path: '/',
@@ -23,6 +24,17 @@ export default new Router({
     {
       path: '/search',
       component: Search
+    },
+    {
+      path: '/notFound',
+      component: NotFound
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.matched && to.matched.length === 0) next('/notFound')
+  else next()
+})
+
+export default router
