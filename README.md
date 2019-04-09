@@ -1,5 +1,5 @@
 # vue + typescript
-一个vue+typescript主导的项目
+一个vue+typescript主导的开发移动端QQ音乐的项目
 
 ## Project setup
 ```
