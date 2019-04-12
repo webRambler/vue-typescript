@@ -3,7 +3,10 @@ export default {
     state.searchHistoryList.push(str)
   },
   DELETE_HISTORYLIST(state: any, str: string) {
-    let index = state.HISTORYLIST.indexOf(str)
-    state.HISTORYLIST.splice(index, 1)
+    let index = state.searchHistoryList.indexOf(str)
+    state.searchHistoryList.splice(index, 1)
+  },
+  CLEAR_HISTORYLIST(state: any) {
+    state.searchHistoryList = []
   }
 }

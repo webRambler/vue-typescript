@@ -5,13 +5,16 @@
       <input @focus="trueFocusFlag" placeholder="搜索歌曲、歌单、专辑" type="text">
       <span @click="falseFocusFlag" v-if="focusFlag">取消</span>
     </div>
-    <div class="search-input-historys" v-if="focusFlag">
+    <div class="search-input-historys" v-if="focusFlag &&searchHistory.length">
       <ul>
-        <li>
+        <li v-for="(item, index) in searchHistory" :key="index">
           <i class="iconfont  icon-clock"></i>
-          <span>哈哈哈哈</span>
-          <i class="iconfont  icon-cha"></i>
+          <span>{{item}}</span>
+          <i @click="deleteOneHistory(item)" class="iconfont  icon-cha"></i>
         </li>
+        <div style="background-color:#fff;">
+          <span @click="clearHistory" class="clear-history">清除搜索记录</span>
+        </div>
       </ul>
     </div>
   </div>
@@ -19,6 +22,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
+import { mapGetters } from 'vuex'
 
 @Component
 export default class searchInput extends Vue {
@@ -28,6 +32,18 @@ export default class searchInput extends Vue {
   }
   falseFocusFlag() {
     this.focusFlag = false
+  }
+  get searchHistory() {
+    return this.$store.getters.searchHistoryList
+  }
+  clearHistory() {
+    this.$store.commit('CLEAR_HISTORYLIST')
+  }
+  deleteOneHistory(str) {
+    this.$store.commit('DELETE_HISTORYLIST', str)
+  }
+  mounted() {
+    console.log(this.$store, 'store333')
   }
 }
 </script>
@@ -69,6 +85,12 @@ export default class searchInput extends Vue {
       top: .45rem;
       width: 100%;
       z-index: 999;
+      .clear-history {
+        color: #47c88a;
+        font-size: .14rem;
+        line-height: .44rem;
+        background-color: #fff;
+      }
       li {
         padding: 0 .15rem;
         border-bottom: 1px solid #ededed;
