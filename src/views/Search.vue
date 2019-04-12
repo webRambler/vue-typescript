@@ -1,6 +1,5 @@
 <template>
   <div>
-    这是搜索页面
     <search-input></search-input>
     <hot-keyword></hot-keyword>
   </div>
@@ -8,8 +7,8 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import HotKeyword from '@/components/search/hot-keyword'
-import SearchInput from '@/components/search/search-input'
+import HotKeyword from '@/components/search/hot-keyword.vue'
+import SearchInput from '@/components/search/search-input.vue'
 
   @Component({
     components: {

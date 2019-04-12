@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import MusicList from '@/components/top-list/Music-list'
+import MusicList from '@/components/top-list/Music-list.vue'
 
 @Component({
   components: {
