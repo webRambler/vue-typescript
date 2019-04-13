@@ -22,7 +22,7 @@ export default class HotKeyword extends Vue {
         let list: Array<object> = res.data.hotkey
         if (res && res.data && res.data.special_key) {
           this.keywordList.unshift({ k: res.data.special_key, n: Date.now().toString().slice(-5).padStart(6, '1') })
-          list.map(v => {
+          list.map((v: any) => {
             v.k && v.k.length > 9 && this.keywordList.push(v)
           })
           this.keywordList = [...new Set(this.keywordList)]
