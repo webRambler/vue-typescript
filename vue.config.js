@@ -9,13 +9,6 @@ module.exports = {
         pathRewrite: {
           '^/api': ''
         }
-      },
-      '/csdn': {
-        target: 'https://blog.csdn.net',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/csdn': ''
-        }
       }
     }
   },
