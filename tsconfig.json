@@ -19,6 +19,9 @@
       "webpack-env",
       "fastclick"
     ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "paths": {
       "@/*": [
         "src/*"

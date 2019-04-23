@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import
 import { AxiosStatic } from 'axios'
 
 declare module '*.vue' {
@@ -10,3 +11,5 @@ declare module 'vue/types/vue' {
     $http: AxiosStatic
   }
 }
+
+declare module ''
