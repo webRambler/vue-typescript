@@ -18,7 +18,7 @@ export default class HotKeyword extends Vue {
     }
     getHotkey() {
       this.$http.get('/api/splcloud/fcgi-bin/gethotkey.fcg?_=1553401390313&g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1').then(res => {
-        console.log(res, 77)
+        // console.log(res, 77)
         let list: Array<object> = res.data.hotkey
         if (res && res.data && res.data.special_key) {
           this.keywordList.unshift({ k: res.data.special_key, n: Date.now().toString().slice(-5).padStart(6, '1') })
@@ -26,7 +26,7 @@ export default class HotKeyword extends Vue {
             v.k && v.k.length > 9 && this.keywordList.push(v)
           })
           this.keywordList = [...new Set(this.keywordList)]
-          console.log(this.keywordList, 6666)
+          // console.log(this.keywordList, 6666)
         }
       })
     }

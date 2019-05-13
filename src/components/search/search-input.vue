@@ -30,10 +30,10 @@ export default class searchInput extends Vue {
     e.preventDefault()
     let val = e.target.value
     this.$store.commit('ADD_HISTORYLIST', val)
-    console.log(val, 3366)
+    // console.log(val, 3366)
     this.$http.get('/api/soso/fcgi-bin/search_for_qq_cp?_=1555096627064&g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1&w=%E5%BC%A0%E6%9D%B0&zhidaqu=1&catZhida=1&t=0&flag=1&ie=utf-8&sem=1&aggr=0&perpage=20&n=20&p=1&remoteplace=txt.mqq.all')
       .then(res => {
-        console.log(res, '000033')
+        // console.log(res, '000033')
       })
   }
   trueFocusFlag() {
@@ -52,7 +52,7 @@ export default class searchInput extends Vue {
     this.$store.commit('DELETE_HISTORYLIST', str)
   }
   mounted() {
-    console.log(this.$store, 'store333')
+    // console.log(this.$store, 'store333')
   }
 }
 </script>
