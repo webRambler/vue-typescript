@@ -3,7 +3,7 @@
     <h2 class="radio-title">电台</h2>
     <div class="radio-content">
       <div v-for="item in radioList" :key="item.radioid">
-        <img :src="item.picUrl" alt="">
+        <img v-lazy="item.picUrl" alt="">
         <i class="iconfont  icon-bofang"></i>
         <div v-text="item.Ftitle"></div>
       </div>

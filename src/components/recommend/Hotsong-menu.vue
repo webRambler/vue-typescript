@@ -3,7 +3,7 @@
     <h2>热门歌单</h2>
     <ul>
       <li v-for="item in songList" :key="item.id">
-        <img :src="item.picUrl" alt>
+        <img v-lazy="item.picUrl" alt>
         <span class="ali-icon span">
           <i class="iconfont icon-erji"></i>
           {{calculateNum(item.accessnum)}}万

@@ -7,6 +7,12 @@ import store from '@/store/store'
 import './registerServiceWorker'
 import http from './utils/http'
 import FastClick from 'fastclick' // 引入插件
+import VueLazyload from 'vue-lazyload'
+
+
+Vue.use(VueLazyload, {
+  loading: require('./assets/lazy.png')
+})
 
 // 使用 fastclick
 FastClick.attach(document.body)

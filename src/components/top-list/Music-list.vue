@@ -1,7 +1,7 @@
 <template>
   <div class="music-list">
     <div class="music-list-left">
-      <img :src="obj1.picUrl" :alt="obj1.topTitle">
+      <img v-lazy="obj1.picUrl" :alt="obj1.topTitle">
       <span class="ali-icon span">
         <i class="iconfont icon-erji"></i>
         {{calculateNum(obj1.listenCount)}}万
