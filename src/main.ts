@@ -14,8 +14,12 @@ Vue.use(VueLazyload, {
   loading: require('./assets/lazy.png')
 })
 
+interface FastClickType {
+  attach?: any
+}
+
 // 使用 fastclick
-FastClick.attach(document.body)
+(FastClick as FastClickType).attach(document.body)
 
 if (document && document.documentElement) document.documentElement.style.fontSize = document.documentElement.clientWidth / 375 * 100 + 'px'
 
