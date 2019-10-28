@@ -24,10 +24,10 @@ import { Vue, Component } from 'vue-property-decorator'
 
 export default class App extends Vue {
   mounted() {
-    window.addEventListener('unload', this.saveState)
+    // window.addEventListener('unload', this.saveState)
   }
   saveState() {
-    sessionStorage.setItem('state', JSON.stringify(this.$store.state))
+    // sessionStorage.setItem('state', JSON.stringify(this.$store.state))
   }
 }
 
