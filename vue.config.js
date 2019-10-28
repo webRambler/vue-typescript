@@ -1,3 +1,9 @@
+const path = require('path')
+
+const resolve = function(dir) {
+  return path.join(__dirname, dir)
+}
+
 module.exports = {
   publicPath: '/',
   lintOnSave: true,
@@ -23,5 +29,7 @@ module.exports = {
       .use('text-loader')
       .loader('text-loader')
       .end()
+    config.resolve.alias
+      .set('@', resolve('src'))
   }
 }

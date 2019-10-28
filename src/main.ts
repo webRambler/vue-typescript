@@ -24,7 +24,6 @@ interface FastClickType {
 if (document && document.documentElement) document.documentElement.style.fontSize = document.documentElement.clientWidth / 375 * 100 + 'px'
 
 Vue.use(ElementUI)
-
 Vue.config.productionTip = false
 
 Vue.prototype.$http = http
