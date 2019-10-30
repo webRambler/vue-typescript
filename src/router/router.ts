@@ -1,8 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+// @ts-ignore
 import Home from '@/views/recommend.vue'
+// @ts-ignore
 import Search from '@/views/Search.vue'
+// @ts-ignore
 import Toplist from '@/views/Toplist.vue'
+// @ts-ignore
 import NotFound from '@/views/NotFound.vue'
 
 Vue.use(VueRouter)

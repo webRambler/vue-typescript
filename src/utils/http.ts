@@ -2,12 +2,10 @@ import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios'
 
 
 const TIMEOUT: number = 15000
-const http = axios.create({
-  withCredentials: true,
-  timeout: TIMEOUT,
-  headers: {
 
-  }
+const http = axios.create({
+  // withCredentials: true,
+  timeout: TIMEOUT
 })
 
 interface httpPendingObj {

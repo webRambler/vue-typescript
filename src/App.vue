@@ -43,6 +43,9 @@ export default class App extends Vue {
     background-color: #F4F4F4;
     text-align: center;
     color: $textColor;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
   #nav {
     display: flex;

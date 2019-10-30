@@ -1,6 +1,6 @@
 <template>
-  <div style="text-align: center; vertical-align: middle">
-    404，无法找到对应的页面
+  <div class="not-found">
+    <b>404</b>&nbsp;&nbsp;&nbsp;无法找到对应的页面~~
   </div>
 </template>
 
@@ -13,6 +13,13 @@ export default class NotFound extends Vue {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+  .not-found {
+    text-align: center;
+    padding-top: 200px;
+    flex: 1;
+    b {
+      color: crimson;
+    }
+  }
 </style>
