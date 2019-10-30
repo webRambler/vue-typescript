@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "dev": "vue-cli-service serve",
+    "dev": "node scripts/dev-server.js",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
@@ -39,6 +39,7 @@
     "http-proxy-middleware": "^0.20.0",
     "lint-staged": "^8.1.0",
     "node-sass": "^4.9.0",
+    "nodemon": "^1.19.4",
     "open": "^7.0.0",
     "sass-loader": "^7.0.1",
     "text-loader": "^0.0.1",

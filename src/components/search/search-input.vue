@@ -1,15 +1,16 @@
 <template>
   <div class="search-input">
     <div class="search-input-top">
-      <i class="iconfont  icon-fangdajing"></i>
-      <input @keyup.enter="search" @focus="trueFocusFlag" placeholder="搜索歌曲、歌单、专辑" type="text">
+<!--      <i class="iconfont  icon-fangdajing"></i>-->
+      <el-input prefix-icon="el-icon-search" @keyup.native.enter="search" clearable @focus="trueFocusFlag" placeholder="搜索歌曲、歌单、专辑" type="text" v-model="inputVal">
+      </el-input>
       <span @click="falseFocusFlag" v-if="focusFlag">取消</span>
     </div>
     <div class="search-input-historys" v-if="focusFlag &&searchHistory.length">
       <ul>
         <li v-for="(item, index) in searchHistory" :key="index">
           <i class="iconfont  icon-clock"></i>
-          <span>{{item}}</span>
+          <span @click="tapHistory(item)">{{item}}</span>
           <i @click="deleteOneHistory(item)" class="iconfont  icon-cha"></i>
         </li>
         <div style="background-color:#fff;">
@@ -26,15 +27,21 @@ import { Vue, Component } from 'vue-property-decorator'
 @Component
 export default class searchInput extends Vue {
   focusFlag: boolean = false
-  search(e: any) {
-    e.preventDefault()
-    let val = e.target.value
-    this.$store.commit('ADD_HISTORYLIST', val)
-    // console.log(val, 3366)
-    this.$http.get('/api/soso/fcgi-bin/search_for_qq_cp?_=1555096627064&g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1&w=%E5%BC%A0%E6%9D%B0&zhidaqu=1&catZhida=1&t=0&flag=1&ie=utf-8&sem=1&aggr=0&perpage=20&n=20&p=1&remoteplace=txt.mqq.all')
+  inputVal: any = '世间的美好与你环环相扣'
+  pageNum: number = 1
+  search() {
+    if (this.inputVal === '') return
+    this.$store.commit('ADD_HISTORYLIST', this.inputVal)
+    const now = Date.now()
+    this.$http.get(`/song/searchSong?_=${now}&w=${this.inputVal}&p=${this.pageNum++}`)
       .then(res => {
-        // console.log(res, '000033')
+        console.log(res, '000033')
       })
+  }
+  tapHistory(val) {
+    this.inputVal = val
+    this.pageNum = 1
+    this.search()
   }
   trueFocusFlag() {
     this.focusFlag = true
@@ -70,21 +77,15 @@ export default class searchInput extends Vue {
         color: #ccc;
         left: .1rem;
       }
-      input {
-        flex: 1;
-        border-radius: 4px;
-        font-size: .14rem;
-        height: .16rem;
-        color: #ccc;
-        padding: 8px 12px 8px 35px;
-        &::-webkit-input-placeholder {
-          color: #ccc;
-        }
+      /deep/ .el-input__inner {
+        height: .36rem;
+        line-height: .36rem;
       }
       span {
         padding: 0 .1rem;
         font-size: .14rem;
         height: .36rem;
+        min-width: .3rem;
         line-height: .36rem;
       }
     }
@@ -107,10 +108,12 @@ export default class searchInput extends Vue {
         background-color: #fff;
         height: .44rem;
         line-height: .44rem;
+        display: flex;
         span {
           font-size: .15rem;
           margin-left: .15rem;
           color: #000;
+          flex: 1;
         }
         i:last-of-type {
           float: right;

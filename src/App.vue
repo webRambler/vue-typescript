@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import Header from './components/header.vue'
+import Header from '@/components/header.vue'
 import { Vue, Component } from 'vue-property-decorator'
 
 @Component({

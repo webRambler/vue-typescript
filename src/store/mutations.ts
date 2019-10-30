@@ -1,5 +1,7 @@
 export default {
   ADD_HISTORYLIST(state: any, str: string) {
+    if (str === '') return
+    str = str.trim()
     state.searchHistoryList.push(str)
     state.searchHistoryList = [...new Set(state.searchHistoryList)]
   },
