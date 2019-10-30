@@ -2,34 +2,39 @@
   <div class="hot-keyword">
     <h3 class="hot-keyword_title">热门搜索</h3>
     <div>
-      <a class="hot-keyword_text" v-for="item in keywordList" :key="item.n">{{item.k}} </a>
+      <span @click="searchHotword(item.k)" class="hot-keyword_text" v-for="item in keywordList" :key="item.n">{{item.k}} </span>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
+import eBus from '@/utils/event-bus'
+
 
 @Component
 export default class HotKeyword extends Vue {
-    keywordList: Array<object> = []
-    created() {
-      this.getHotkey()
-    }
-    getHotkey() {
-      this.$http.get('/api/splcloud/fcgi-bin/gethotkey.fcg?_=1553401390313&g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1').then(res => {
-        // console.log(res, 77)
-        let list: Array<object> = res.data.hotkey
-        if (res && res.data && res.data.special_key) {
-          this.keywordList.unshift({ k: res.data.special_key, n: Date.now().toString().slice(-5).padStart(6, '1') })
-          list.map((v: any) => {
-            v.k && v.k.length > 9 && this.keywordList.push(v)
-          })
-          this.keywordList = [...new Set(this.keywordList)]
-          // console.log(this.keywordList, 6666)
-        }
-      })
-    }
+  keywordList: Array<object> = []
+  created() {
+    this.getHotkey()
+  }
+  getHotkey() {
+    this.$http.get('/api/splcloud/fcgi-bin/gethotkey.fcg?_=1553401390313&g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1').then(res => {
+      // console.log(res, 77)
+      let list: Array<object> = res.data.hotkey
+      if (res && res.data && res.data.special_key) {
+        this.keywordList.unshift({ k: res.data.special_key, n: Date.now().toString().slice(-5).padStart(6, '1') })
+        list.map((v: any) => {
+          v.k && v.k.length > 9 && this.keywordList.push(v)
+        })
+        this.keywordList = [...new Set(this.keywordList)]
+        // console.log(this.keywordList, 6666)
+      }
+    })
+  }
+  searchHotword(val) {
+    eBus.$emit('searchHotkey', val)
+  }
 }
 </script>
 

@@ -23,6 +23,8 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
+import eBus from '@/utils/event-bus'
+
 
 @Component
 export default class searchInput extends Vue {
@@ -58,8 +60,11 @@ export default class searchInput extends Vue {
   deleteOneHistory(str: String) {
     this.$store.commit('DELETE_HISTORYLIST', str)
   }
-  mounted() {
-    // console.log(this.$store, 'store333')
+  created() {
+    eBus.$on('searchHotkey', val => {
+      this.inputVal = val
+      this.search()
+    })
   }
 }
 </script>
