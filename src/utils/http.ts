@@ -17,11 +17,12 @@ let httpPending: httpPendingObj[] = []
 const Cancel = axios.CancelToken
 
 function removeHttpPending(config: AxiosRequestConfig): any {
+  // debugger
   httpPending.map((item, index, arr) => {
     if (item.u === config.url + '&' + config.method) {
       console.warn(`${config.url}: 短时间内重复请求`)
-      item.f()
-      arr.splice(index, 1)
+      // item.f()
+      // arr.splice(index, 1)
     }
     return config
   })

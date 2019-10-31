@@ -29,13 +29,13 @@ import eBus from '@/utils/event-bus'
 @Component
 export default class searchInput extends Vue {
   focusFlag: boolean = false
-  inputVal: any = '世间的美好与你环环相扣'
+  inputVal: string = '世间的美好与你环环相扣'
   pageNum: number = 1
   search() {
     if (this.inputVal === '') return
     this.$store.commit('ADD_HISTORYLIST', this.inputVal)
-    const now = Date.now()
-    this.$http.get(`/song/searchSong?_=${now}&w=${this.inputVal}&p=${this.pageNum++}`)
+    const now: number = Date.now()
+    this.$http.get(`/song/searchSong?_=${now}&w=${this.inputVal.trim()}&p=${this.pageNum++}`)
       .then(res => {
         console.log(res, '000033')
       })

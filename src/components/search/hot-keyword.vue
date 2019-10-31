@@ -19,7 +19,8 @@ export default class HotKeyword extends Vue {
     this.getHotkey()
   }
   getHotkey() {
-    this.$http.get('/api/splcloud/fcgi-bin/gethotkey.fcg?_=1553401390313&g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1').then(res => {
+    const now: number = Date.now()
+    this.$http.get(`/api/splcloud/fcgi-bin/gethotkey.fcg?_=${now}&g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1`).then(res => {
       // console.log(res, 77)
       let list: Array<object> = res.data.hotkey
       if (res && res.data && res.data.special_key) {

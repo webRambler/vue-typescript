@@ -8,6 +8,8 @@ module.exports = {
   publicPath: '/',
   lintOnSave: true,
   devServer: {
+    hot: true,
+    open: true,
     proxy: {
       '/api': {
         target: 'https://c.y.qq.com',
@@ -17,6 +19,9 @@ module.exports = {
         }
       }
     }
+  },
+  configureWebpack: {
+    entry: ['webpack-hot-middleware/client?reload=true', resolve('src/main.ts')]
   },
   chainWebpack: config => {
     // 解决 cli3 热更新失效 https://github.com/vuejs/vue-cli/issues/1559

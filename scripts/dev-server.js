@@ -4,10 +4,10 @@ const axios = require('axios')
 const path = require('path')
 const webpack = require('webpack')
 const config = require('@vue/cli-service/webpack.config.js')
-const proxyTable = require('../vue.config').devServer.proxy
-const open = require('open')
+const { proxy: proxyTable, open } = require('../vue.config').devServer
+const openBrowser = require('open')
 
-
+console.log(config, 7896)
 const app = express()
 const routes = express.Router()
 
@@ -98,7 +98,9 @@ const readyPromise = new Promise(resolve => {
 console.log('> Starting dev server...')
 devMiddleware.waitUntilValid(() => {
   console.log('> Listening at ' + uri + '\n')
-  // open(uri)
+  if (process.env.NODE_ENV !== 'test' && open) {
+    openBrowser(uri)
+  }
   _resolve()
 })
 
