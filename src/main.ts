@@ -29,6 +29,10 @@ Vue.config.productionTip = false
 
 Vue.prototype.$http = http
 
+if (module.hot) {
+  module.hot.accept()
+}
+
 new Vue({
   router,
   store,

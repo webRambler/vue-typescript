@@ -65,6 +65,9 @@ export default class searchInput extends Vue {
       this.inputVal = val
       this.search()
     })
+    eBus.$on('getFirstHotkey', val => {
+      this.inputVal = val.k
+    })
   }
 }
 </script>

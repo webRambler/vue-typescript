@@ -29,6 +29,7 @@ export default class HotKeyword extends Vue {
           v.k && v.k.length > 9 && this.keywordList.push(v)
         })
         this.keywordList = [...new Set(this.keywordList)]
+        eBus.$emit('getFirstHotkey', this.keywordList[0])
         // console.log(this.keywordList, 6666)
       }
     })

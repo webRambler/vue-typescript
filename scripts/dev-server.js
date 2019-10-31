@@ -7,7 +7,6 @@ const config = require('@vue/cli-service/webpack.config.js')
 const { proxy: proxyTable, open } = require('../vue.config').devServer
 const openBrowser = require('open')
 
-console.log(config, 7896)
 const app = express()
 const routes = express.Router()
 
@@ -57,7 +56,9 @@ const devMiddleware = require('webpack-dev-middleware')(compiler, {
 })
 
 const hotMiddleware = require('webpack-hot-middleware')(compiler, {
-  log: () => {}
+  log: info => {
+    console.log(info)
+  }
 })
 
 compiler.plugin('compilation', (compilation) => {
