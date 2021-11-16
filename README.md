@@ -1,5 +1,5 @@
 # vue + typescript
-一个vue+typescript主导的开发移动端QQ音乐的项目
+A project for practicing vue and typescript which content is simulating the mobile app of QQ Music.
 
 ## Project setup
 ```
@@ -8,7 +8,7 @@ yarn install
 
 ### Compiles and hot-reloads for development
 ```
-yarn serve或者
+yarn serve or
 yarn dev
 ```
 
